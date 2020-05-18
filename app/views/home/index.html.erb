@@ -1,5 +1,60 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="jumbotron my-5">
+  <h2 class="display-4 pb-4">What do you want to learn today?</h2>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum nesciunt magni ipsum, illum consectetur aut quod itaque id enim suscipit soluta minima. Optio odio placeat ex, deleniti vitae voluptates maiores?</p>
+</div>
+
+<div class="card-group text-center">
+  <div class="card">
+    <div class="card-body">
+      <h3>
+        <div class="fa fa-graduation-cap"></div>
+        <%= Course.count %>
+        Online courses
+      </h3>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h3>
+        <div class="fa fa-chalkboard-teacher"></div>
+        <%= User.count %>
+        Teachers
+      </h3>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h3>
+        <div class="fa fa-user"></div>
+        <%= User.count %>
+        Active users
+      </h3>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h3>
+        <div class="fa fa-infinity"></div>
+        Life-time access
+      </h3>
+    </div>
+  </div>
+</div>
 
 
-<i class="fab fa-facebook-f fa-3x mx-2"></i>
+<hr>
+<h2>Popular courses</h2>
+  <div class="card-columns">
+    <% @courses.each do |course| %>
+      <%= render course %>
+    <% end %>
+  </div>
+<hr>
+<h2>Top rated courses</h2>
+<hr>
+<h2>Latest courses</h2>
+  <div class="card-columns">
+    <% @recent_courses.each do |course| %>
+      <%= render course %>
+    <% end %>
+  </div>
