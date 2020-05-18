@@ -12,14 +12,18 @@
       </li>
     </ul>  
     <ul class="navbar-nav ml-auto">
-    <form class="form-inline my-2 my-lg-0">
 
-        <div class="input-group">
-        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
-          <div class="input-group-text"><span class="fa fa-search form-control-feedback"></span></div>
+      <%= form_tag(courses_path, method: :get, class: "form-inline") do %>
+        <div class="input-group  my-2 my-lg-0">
+          <%= text_field_tag :title, params[:title], placeholder: "Search...", class: "form-control" %>   
+          <div class="input-group-append">
+            <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+              <span class="fa fa-search form-control-feedback"></span>
+            <% end %>
+          </div>
         </div>
+      <% end %>
 
-    </form>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= user_signed_in? ? "#{current_user.email}" : "Guest" %>
