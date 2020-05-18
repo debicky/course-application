@@ -5,8 +5,7 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.label :description %>
-    <%= f.rich_text_area :description, placeholder: 'Text goes here' %>
+    <%= f.input :description, as: :rich_text_area, label: 'Description', placeholder: 'Text goes here' %>
   </div>
 
   <div class="form-actions">
