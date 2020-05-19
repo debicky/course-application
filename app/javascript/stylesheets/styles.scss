@@ -3,16 +3,44 @@
 // font-family: 'Pacifico', cursive;
 // font-family: 'Cairo', sans-serif;
 h1,
-h2,
 h3,
 h4 {
 font-family: 'Lobster', cursive;
+}
+
+h2 {
+font-family: 'Lobster', cursive;
+color: white;
 }
 .navbar-brand {
 font-family: 'Cairo', sans-serif;
 font-size: 35px;
 }
-body, .navbar-brand {
+body {
 font-family: 'Cairo', sans-serif;
 font-size: 24px;
+background-color: #1d1d1f;
+}
+
+.card-columns {
+  column-gap: .25rem;
+  background: linear-gradient(90deg, rgba(58,109,180,1) 16%, rgba(253,83,29,1) 59%, rgba(252,176,69,1) 100%);
+
+}
+
+.navbar {
+  height: 6rem;
+}
+
+
+.border-gradient {
+  border-bottom: 0.25rem solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, rgba(58,109,180,1) 16%, rgba(253,83,29,1) 59%, rgba(252,176,69,1) 100%);
+}
+
+.card-header a {
+  color: black;
+  text-decoration: none;
+
 }

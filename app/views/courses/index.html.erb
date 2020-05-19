@@ -1,7 +1,10 @@
-<h1>Courses: <%= @courses.count %></h1>
-<% @courses.each do |course| %>
-  <%= render course %>
-<% end %>
+<h2>Courses: <%= @courses.count %></h2>
+
+<div class="card-columns p-1 rounded">
+  <% @courses.each do |course| %>
+    <%= render course %>
+  <% end %>
+</div>
 
 
 

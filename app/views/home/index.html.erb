@@ -1,9 +1,9 @@
 <div class="jumbotron my-5">
-  <h2 class="display-4 pb-4">What do you want to learn today?</h2>
+  <h1 class="display-4 pb-4">What do you want to learn today?</h1>
   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum nesciunt magni ipsum, illum consectetur aut quod itaque id enim suscipit soluta minima. Optio odio placeat ex, deleniti vitae voluptates maiores?</p>
 </div>
 
-<div class="card-group text-center">
+<div class="card-group text-center rounded">
   <div class="card">
     <div class="card-body">
       <h3>
@@ -44,7 +44,7 @@
 
 <hr>
 <h2>Popular courses</h2>
-  <div class="card-columns">
+  <div class="card-columns rounded p-1">
     <% @courses.each do |course| %>
       <%= render course %>
     <% end %>
@@ -53,7 +53,7 @@
 <h2>Top rated courses</h2>
 <hr>
 <h2>Latest courses</h2>
-  <div class="card-columns">
+  <div class="card-columns rounded p-1">
     <% @recent_courses.each do |course| %>
       <%= render course %>
     <% end %>
