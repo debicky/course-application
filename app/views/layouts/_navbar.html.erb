@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-gradient mb-5">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-gradient">
 <div class="container">
   <%= link_to root_path, class: "navbar-brand" do %>
     <div class="fab fa-contao "></div>
@@ -20,6 +20,12 @@
         <%= link_to new_course_path, class: "nav-link" do %>
           <div class="fa fa-plus"></div>
           New Course
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to users_path, class: "nav-link" do %>
+          <div class="fa fa-user"></div>
+          Users
         <% end %>
       </li>
 
