@@ -1,5 +1,5 @@
 <%= link_to "Courses", courses_path %> / <%= link_to @course.title %>
-  <div class="card text-center mb-1 border border-dark">
+  <div class="card text-center mb-1 border border-dark p-1">
     <div class="card-header ">
     <div class="fa fa-graduation-cap"></div>
       <%= link_to @course.title, course_path(@course) %>
@@ -20,6 +20,7 @@
       <%= @course.user.email %>
       <div class="fa fa-chalkboard-teacher"></div>
     </div>
+
     <div class="card-footer">
         <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-warning" %>
         <%= link_to 'Destroy', @course, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
