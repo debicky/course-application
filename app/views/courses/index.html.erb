@@ -1,11 +1,35 @@
 <h2>Courses: <%= @courses.count %></h2>
 
-<div class="card-columns p-1 rounded">
-  <% @courses.each do |course| %>
-    <%= render course %>
-  <% end %>
-</div>
 
+
+<div class="row">
+  <div class="col-md-2">
+  <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f| %>
+  <%= f.label :title %>
+  <%= f.search_field :title_cont, placeholder: "Title", class: "form-control" %>
+  <%= f.label :level %>
+  <%= f.select :level_cont, Course.levels, class: "form-control" %>
+  <%= f.label :language %>
+  <%= f.select :language_cont, Course.languages, include_blank: true, class: "custom-select" %>
+  <%= f.label :price %>
+  <%= f.search_field :price_eq, placeholder: "Price", class: "form-control" %>
+  <%= f.label :teacher %>
+  <%= f.search_field :user_email_cont, placeholder: "User email", class: "form-control" %>
+
+  <%= f.submit %>
+<% end %>
+<%= link_to "Refresh", courses_path %>
+  </div>
+
+  <div class="col-md-10">
+    <div class="card-columns p-1 rounded">
+      <% @courses.each do |course| %>
+        <%= render course %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
 
 
 

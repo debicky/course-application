@@ -33,13 +33,13 @@
     </ul>  
     <ul class="navbar-nav ml-auto">
 
-      <%= form_tag(courses_path, method: :get, class: "form-inline") do %>
+      <%= search_form_for(@ransack_courses, as: :courses_search, url: courses_path, class: "form-inline") do |f| %>
         <div class="input-group  my-2 my-lg-0">
-          <%= text_field_tag :title, params[:title], placeholder: "Search...", class: "form-control" %>   
+          <%= f.search_field :title_or_short_description_cont, placeholder: "Search...", class: "form-control" %>   
           <div class="input-group-append">
-            <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+          <button class="btn btn-primary" type="submit">
               <span class="fa fa-search form-control-feedback"></span>
-            <% end %>
+          </button>
           </div>
         </div>
       <% end %>
