@@ -6,4 +6,8 @@ skip_before_action :authenticate_user!, only: [:index]
     @courses = Course.all.limit(3)
     @recent_courses = Course.limit(3).order("created_at DESC")
   end
+
+  def activity
+    @activities = PublicActivity::Activity.all
+  end
 end

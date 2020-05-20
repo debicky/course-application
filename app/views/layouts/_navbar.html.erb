@@ -17,6 +17,12 @@
         <% end %>
       </li>
       <li class="nav-item">
+        <%= link_to home_activity_path, class: "nav-link" do %>
+          <div class="fa fa-bell"></div>
+          Activity
+        <% end %>
+      </li>
+      <li class="nav-item">
         <%= link_to new_course_path, class: "nav-link" do %>
           <div class="fa fa-plus"></div>
           New Course
@@ -33,7 +39,7 @@
     </ul>  
     <ul class="navbar-nav ml-auto">
 
-      <%= search_form_for(@ransack_courses, as: :courses_search, url: courses_path, class: "form-inline") do |f| %>
+      <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path, class: "form-inline" do |f| %>
         <div class="input-group  my-2 my-lg-0">
           <%= f.search_field :title_or_short_description_cont, placeholder: "Search...", class: "form-control" %>   
           <div class="input-group-append">
