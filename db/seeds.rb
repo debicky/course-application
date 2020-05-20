@@ -18,7 +18,12 @@ User.create!(
   Course.create!(
     title: Faker::Educator.course_name,
     description: Faker::Hipster.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 3),
-    user_id: User.first.id
+    user_id: User.first.id,
+    short_description: Faker::Quote.famous_last_words,
+    language: [ "English", "Polish", "Spanish"].sample,
+    level: [ "Beginner", "Intermediate", "Advanced"].sample,
+    price: Faker::Number.between(from: 10, to: 200)
+
 
   )
 end

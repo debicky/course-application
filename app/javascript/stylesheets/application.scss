@@ -3,3 +3,8 @@
 @import "styles";
 @import '@fortawesome/fontawesome-free';
 @import "./actiontext.scss";
+
+
+.form-control.is-valid {
+  background-image: none;
+}

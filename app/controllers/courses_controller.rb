@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
     if params[:title]
       @courses = Course.where('title ILIKE ?', "%#{params[:title]}%")
     else
-      @courses = Course.all
+      @courses = Course.order("created_at DESC")
     end
   end
 
@@ -74,6 +74,6 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:title, :description, :user_id)
+      params.require(:course).permit(:title, :description, :user_id, :short_description, :language, :price, :level)
     end
 end
