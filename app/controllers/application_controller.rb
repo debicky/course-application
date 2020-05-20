@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
+  include PublicActivity::StoreController
   before_action :authenticate_user!
 
-  include PublicActivity::StoreController
   
 
   before_action :set_global_variables, if: :user_signed_in?

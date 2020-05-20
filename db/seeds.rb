@@ -7,14 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-User.create!(
-  email: "test@test.pl",
-  password: "password",
-  password_confirmation: "password"
-)
 
 
-10.times do 
+
+20.times do 
   Course.create!(
     title: Faker::Educator.course_name,
     description: Faker::Hipster.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 3),

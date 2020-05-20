@@ -16,16 +16,22 @@
           Courses
         <% end %>
       </li>
-      <li class="nav-item">
-        <%= link_to home_activity_path, class: "nav-link" do %>
-          <div class="fa fa-bell"></div>
-          Activity
-        <% end %>
-      </li>
+
+      <% if current_user && current_user.has_role?(:teacher) %>
       <li class="nav-item">
         <%= link_to new_course_path, class: "nav-link" do %>
           <div class="fa fa-plus"></div>
           New Course
+        <% end %>
+      </li>
+      <% end %>
+
+
+      <% if current_user && current_user.has_role?(:admin) %>
+      <li class="nav-item">
+        <%= link_to home_activity_path, class: "nav-link" do %>
+          <div class="fa fa-bell"></div>
+          Activity
         <% end %>
       </li>
       <li class="nav-item">
@@ -34,6 +40,7 @@
           Users
         <% end %>
       </li>
+      <% end %>
 
 
     </ul>  

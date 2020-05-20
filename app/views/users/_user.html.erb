@@ -41,4 +41,13 @@
       <div class="badge badge-danger">No</div>
       <% end %>
     </div>
+    <div class="card-footer">
+      <% user.roles.each do |role| %>
+      <div class="badge badge-success">
+        <%= role.name %>
+      </div>
+      <% end %>
+      <br>
+      <%= link_to "Edit user role", edit_user_path(user), class: "btn btn-warning" %>
+    </div>
 </div>

@@ -9,6 +9,7 @@ gem 'faker'
 gem 'friendly_id'
 gem 'ransack'
 gem 'public_activity'
+gem "rolify"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
