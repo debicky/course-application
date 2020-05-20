@@ -38,7 +38,7 @@
 
     </ul>  
     <ul class="navbar-nav ml-auto">
-
+      <% if current_user %>
       <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path, class: "form-inline" do |f| %>
         <div class="input-group  my-2 my-lg-0">
           <%= f.search_field :title_or_short_description_cont, placeholder: "Search...", class: "form-control" %>   
@@ -48,6 +48,7 @@
           </button>
           </div>
         </div>
+      <% end %>
       <% end %>
 
       <li class="nav-item dropdown">

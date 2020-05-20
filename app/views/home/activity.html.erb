@@ -1,7 +1,10 @@
-<h1>Activities</h1>
+  <h3 class="text-center">Activities 
+    <div class="badge badge-info"><%= @activities.count %></div>
+  </h3>
 
 <% @activities.each do |activity| %>
-  <div class="row">
+  <ul class="list-group">
+  <li class="list-group-item">
     <%= activity.id %>
     <%= activity.trackable_type %>
     <%= activity.trackable_id %>
@@ -9,5 +12,6 @@
     <%= activity.key %>
     <%= activity.parameters %>
     <%= activity.owner %>
-  </div>
+  </li>
+  </ul>
 <% end %>
