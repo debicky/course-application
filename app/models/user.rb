@@ -14,6 +14,9 @@ class User < ApplicationRecord
   def username
     self.email.split("@")[0]
   end
+
+  extend FriendlyId
+  friendly_id :email, use: :slugged
   
   after_create :assign_default_role
 
