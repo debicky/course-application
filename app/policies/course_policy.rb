@@ -6,23 +6,27 @@ class CoursePolicy < ApplicationPolicy
   end
 
   def edit?
-    @user.has_role?:admin || @record.user = @user
+    @record.user == @user || @user.has_role?(:admin)
+  end
+  
+  def update?
+    @record.user == @user || @user.has_role?(:admin)
   end
   
   def new?
-    @user.has_role?:teacher
+    @user.has_role?(:teacher)
   end
-
-  def update?
-    @user.has_role?:admin || @record.user = @user
-  end
-
+  
   def create?
-    @user.has_role?:teacher
+    @user.has_role?(:teacher)
   end
   
   def destroy?
-    @user.has_role?:admin || @record.user = @user
+    @record.user == @user || @user.has_role?(:admin)
+  end
+
+  def admin_or_owner?
+    @user.has_role?(:admin) || @record.user == @user
   end
 
 end

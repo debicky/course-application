@@ -4,7 +4,11 @@
       <%= link_to course.title, course_path(course) %>
     </div>
     <div class="card-body ">
-      <p class="card-text"><%= simple_format(course.short_description) %></p>
+      <% if current_page?(courses_path) || current_page?(root_path)  %>
+        <p class="card-text"><%= simple_format(course.short_description) %></p>
+      <% else %>
+        <p class="card-text"><%= course.description %></p>
+      <% end %>
    
     </div>
     <div class="card-footer">
@@ -19,10 +23,12 @@
       <%= course.user.username %>
       <div class="fa fa-chalkboard-teacher"></div>
     </div>
-    <% if policy(course).edit? %>
-    <div class="card-footer ">
-        <%= link_to 'Edit', edit_course_path(course), class: "btn btn-warning" %>
-        <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-    </div> 
+    <% if current_user %>
+      <% if policy(course).admin_or_owner? %>
+        <div class="card-footer ">
+            <%= link_to 'Edit', edit_course_path(course), class: "btn btn-warning"  %> 
+            <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </div> 
+      <% end %>
     <% end %>
   </div>

@@ -2,11 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
 
   
-    def index
-      #@users = User.order("created_at DESC")
-
-      @q = User.ransack(params[:q])
-      @users = @q.result(distinct: true)
+  def index
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
+    authorize @users
     end
 
     def edit

@@ -1,20 +1,21 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
+
 
   # GET /courses
   # GET /courses.json
   def index
-
-      @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
-      @courses = @ransack_courses.result.includes(:user)
-    
+    @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
+    @courses = @ransack_courses.result.includes(:user).order("created_at DESC")
   end
-
+  
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @courses = @ransack_courses.result.includes(:user)
   end
-
+  
   # GET /courses/new
   def new
     @course = Course.new
