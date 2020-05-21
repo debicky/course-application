@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @courses = @ransack_courses.result.includes(:user)
+    @lessons = @course.lessons
   end
   
   # GET /courses/new

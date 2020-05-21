@@ -1,7 +1,16 @@
 <%= link_to "Courses", courses_path %> / <%= link_to @course.title %>
 
-<% @courses.each do |course| %>
-  <%= render course %>
-<% end %>
+<div class="row">
+  <div class="col-lg-6">
+    <%= render @course %>
+  </div>
 
-<%= link_to 'Back', courses_path %>
+  <div class="col-lg-6">
+    <%= link_to "Add lesson", new_lesson_path(course_id: @course.id) %>
+    <% @lessons.each do |lesson| %>
+      <%= render 'lessons/lesson', lesson: lesson %>
+    <% end %>
+  </div>
+
+</div>
+

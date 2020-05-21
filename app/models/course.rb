@@ -1,8 +1,11 @@
 class Course < ApplicationRecord
   include PublicActivity::Model
+  tracked owner: Proc.new{ |controller, model| controller.current_user }
+
   validates :title, :description, :short_description, :language, :price, :level, presence: true
-  validates :description, length: {minimum: 5}
+
   belongs_to :user
+  has_many :lessons, dependent: :destroy
   has_rich_text :description
 
   extend FriendlyId
@@ -18,10 +21,7 @@ class Course < ApplicationRecord
     LEVELS.map { |level| [level, level]}
   end
   
-  tracked owner: Proc.new{ |controller, model| controller.current_user }
   
-  def to_s
-    
-  end
+
 
 end
