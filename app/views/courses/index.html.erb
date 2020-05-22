@@ -1,30 +1,36 @@
-<h3 class="text-center">Courses
-  <div class="badge badge-info"><%= @courses.count %></div>
-</h3>
-
-
 <div class="row">
   <div class="col-md-2">
-  
-  <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f| %>
-  <%= f.label :title %>
-  <%= f.search_field :title_cont, placeholder: "Title", class: "form-control" %>
-  <%= f.label :level %>
-  <%= f.select :level_cont, Course.levels, class: "form-control" %>
-  <%= f.label :language %>
-  <%= f.select :language_cont, Course.languages, include_blank: true, class: "custom-select" %>
-  <%= f.label :price %>
-  <%= f.search_field :price_eq, placeholder: "Price", class: "form-control" %>
-  <%= f.label :teacher %>
-  <%= f.search_field :user_email_cont, placeholder: "User email", class: "form-control" %>
+    <h3 class="text-center">Filter
+      <div class="badge badge-primary"></div>
+    </h3>
 
-  <%= f.submit %>
-<% end %>
-<%= link_to "Refresh", courses_path %>
+    <div class="card p-2">
+      <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f| %>
+        <%= f.label :title %>
+        <%= f.search_field :title_cont, placeholder: "Title", class: "form-control" %>
+        <%= f.label :level %>
+        <%= f.select :level_cont, Course.levels, class: "form-control" %>
+        <%= f.label :language %>
+        <%= f.select :language_cont, Course.languages, include_blank: true, class: "form-control" %><br>
+        <%= f.label :price %>
+        <%= f.search_field :price_eq, placeholder: "Price", class: "form-control" %>
+        <%= f.label :teacher %>
+        <%= f.search_field :user_email_cont, placeholder: "Teacher email", class: "form-control" %>
+        <%= f.submit "Search", class: "btn btn-primary my-2" %>
+      <% end %>
+
+      <%= link_to  courses_path, class: "btn btn-primary" do %>
+          <div class="fa fa-sync"></div>
+      <% end %>
+    </div>
   </div>
 
   <div class="col-md-10">
-    <div class="card-columns p-1 rounded">
+    <h3 class="text-center">Courses
+      <div class="badge badge-primary"><%= @courses.count %></div>
+    </h3>
+
+    <div class="row row-cols-1 row-cols-lg-2 rounded">
       <% @courses.each do |course| %>
         <%= render course %>
       <% end %>
@@ -32,11 +38,4 @@
   </div>
 
 </div>
-
-
-
-
-
-
-<br>
 

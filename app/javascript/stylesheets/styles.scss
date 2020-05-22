@@ -16,14 +16,12 @@ font-size: 35px;
 }
 body {
 font-family: 'Cairo', sans-serif;
-font-size: 24px;
 
 }
 
 
 
-.card-columns {
-  column-gap: .25rem;
+.bg-rainbow {
   background: linear-gradient(90deg, rgba(58,109,180,1) 16%, rgba(253,83,29,1) 59%, rgba(252,176,69,1) 100%);
 
 }
@@ -34,7 +32,7 @@ font-size: 24px;
 
 
 .border-gradient {
-  border-bottom: 0.25rem solid;
+  border-bottom: 0.4rem solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(90deg, rgba(58,109,180,1) 16%, rgba(253,83,29,1) 59%, rgba(252,176,69,1) 100%);
 }

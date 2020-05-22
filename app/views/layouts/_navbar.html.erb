@@ -1,14 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-gradient">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary border-gradient">
 <div class="container">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <div class="fab fa-contao "></div>
+    <div class="fab fa-contao"></div>
     CourseApp
   <% end %>  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse pt-2" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <%= link_to courses_path, class: "nav-link" do %>
@@ -47,10 +47,10 @@
     <ul class="navbar-nav ml-auto">
       <% if current_user %>
       <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path, class: "form-inline" do |f| %>
-        <div class="input-group  my-2 my-lg-0">
-          <%= f.search_field :title_or_short_description_cont, placeholder: "Search...", class: "form-control" %>   
+        <div class="input-group">
+          <%= f.search_field :title_or_short_description_cont, placeholder: "Search...", class: "form-control form-control-sm" %>   
           <div class="input-group-append">
-          <button class="btn btn-primary" type="submit">
+          <button class="btn btn-dark btn-sm" type="submit">
               <span class="fa fa-search form-control-feedback"></span>
           </button>
           </div>
