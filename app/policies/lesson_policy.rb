@@ -18,11 +18,11 @@ class LessonPolicy < ApplicationPolicy
   end
   
   def new?
-    @user.has_role?(:teacher)
+    @record.course.user == @user || @user.has_role?(:admin)
   end
   
   def create?
-    @user.has_role?(:teacher)
+    @record.course.user == @user || @user.has_role?(:admin)
   end
   
   def destroy?

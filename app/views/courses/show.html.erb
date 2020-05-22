@@ -1,12 +1,16 @@
+<%= link_to "Courses", courses_path %> / <%= link_to @course.title %>
 
 <div class="row">
   <div class="col-lg-6">
-  <%= link_to "Courses", courses_path %> / <%= link_to @course.title %>
     <%= render @course %>
   </div>
 
   <div class="col-lg-6">
-    <%= link_to "Add lesson", new_course_lesson_path(@course, @lesson) %>
+    
+    <% if policy(@course).edit? %>
+    <%= link_to "Add lesson", new_course_lesson_path(@course, @lesson), class: "btn btn-primary btn-block mb-2" %>
+    <% end %>
+    
     <% @lessons.each do |lesson| %>
       <%= render 'lessons/lesson', lesson: lesson %>
     <% end %>
