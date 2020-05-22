@@ -2,4 +2,5 @@
 
 <%= render 'form', lesson: @lesson %>
 
+<%= link_to 'Show lesson', course_lesson_path(@lesson.course), class: "btn btn-primary" %> 
 <%= link_to 'Back to course', course_path(@lesson.course), class: "btn btn-primary" %>
