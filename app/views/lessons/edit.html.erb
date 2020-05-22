@@ -1,3 +1,7 @@
+<%= link_to "Courses", courses_path %> /
+<%= link_to @lesson.course.title, course_path(@lesson.course) %> / 
+<%= link_to @lesson.title, course_lesson_path(@lesson.course) %> /
+edit
 
 
 <div class="card">
@@ -8,7 +12,7 @@
     <%= render 'form', lesson: @lesson %>
   </div>
   <div class="card-footer">
-    <%= link_to 'Show lesson', course_lesson_path(@lesson.course), class: "btn btn-primary" %> 
+    <%= link_to 'Show lesson', course_lesson_path(@lesson.course), class: "btn btn-primary my-2" %> 
     <%= link_to 'Back to course', course_path(@lesson.course), class: "btn btn-primary" %>
   </div>
 </div>
