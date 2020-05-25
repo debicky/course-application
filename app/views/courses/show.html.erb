@@ -1,3 +1,7 @@
+<% content_for :title do %>
+  CourseApp | <%= @course.title %>
+<% end %>
+
 <%= link_to "Courses", courses_path %> / 
 <%= link_to @course.title %>
 
