@@ -2,8 +2,10 @@
   CourseApp | <%= @course.title %>
 <% end %>
 
-<%= link_to "Courses", courses_path %> / 
-<%= link_to @course.title %>
+<div class="breadcrumbs pb-3">
+  <%= link_to "Courses", courses_path %> / 
+  <%= link_to @course.title %>
+</div>
 
 <div class="row">
   <div class="col-lg-6">

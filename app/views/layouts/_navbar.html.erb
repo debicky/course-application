@@ -24,16 +24,16 @@
           New Course
         <% end %>
       </li>
+      <% end %>
+
+
+      <% if current_user && current_user.has_role?(:admin) %>
       <li class="nav-item">
         <%= link_to enrollments_path, class: "nav-link" do %>
           <div class="fa fa-lock-open"></div>
           Enrollments
         <% end %>
       </li>
-      <% end %>
-
-
-      <% if current_user && current_user.has_role?(:admin) %>
       <li class="nav-item">
         <%= link_to home_activity_path, class: "nav-link" do %>
           <div class="fa fa-bell"></div>
