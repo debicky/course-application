@@ -7,7 +7,9 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
-    @courses = @ransack_courses.result.includes(:user).order("created_at DESC")
+    #@courses = @ransack_courses.result.includes(:user).order("created_at DESC")
+    @pagy, @courses = pagy(@ransack_courses.result.includes(:user))
+
   end
   
   # GET /courses/1

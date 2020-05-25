@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
   end
 
 
+  include Pagy::Backend
+
 
   private
 

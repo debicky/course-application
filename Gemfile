@@ -11,7 +11,7 @@ gem 'ransack'
 gem 'public_activity'
 gem "rolify"
 gem "pundit"
-
+gem 'pagy'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
