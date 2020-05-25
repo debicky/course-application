@@ -6,7 +6,6 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments.json
   def index
     @enrollments = Enrollment.all
-    authorize @enrollments
   end
   
   # GET /enrollments/1

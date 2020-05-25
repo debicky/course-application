@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    <div class="fa fa-user"></div>
+    <%= link_to enrollment.user.username, enrollment.user %>
+
+    <div class="fa fa-clock"></div>
+    <%= time_ago_in_words(enrollment.updated_at) %>
+
+    <div class="fa fa-graduation-cap"></div>
+    <%= link_to enrollment.course.title, enrollment.course %>
+  </div>
+  <div class="card-body">
+    <div class="fa fa-star text-warning"></div>
+    <%= enrollment.rating %>
+
+    <div class="fa fa-comment"></div>
+    <%= enrollment.review %>
+  </div>
+  <% if current_user && policy(enrollment).edit? %>
+    <div class="card-footer">
+        <%= link_to "Edit review", edit_enrollment_path(enrollment), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

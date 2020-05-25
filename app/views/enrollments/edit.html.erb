@@ -1,14 +1,13 @@
-
 <div class="card">
   <div class="card-header">
-    <h1>Editing Enrollment</h1>
+    <h1><div class="fa fa-star text-warning"></div> Add review</h1>
   </div>
   <div class="card-body">
     <%= render 'form', enrollment: @enrollment %>
   </div>
   <div class="card-footer">
-    <%= link_to 'Show', @enrollment %> |
-    <%= link_to 'Back', enrollments_path %>
+    <%= link_to 'Show review', @enrollment, class: "btn btn-primary" %> 
+    <%= link_to 'Back to course', course_path(@enrollment.course), class: "btn btn-primary" %>
   </div>
 </div>
 
