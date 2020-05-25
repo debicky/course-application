@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable, :confirmable
   has_many :courses
+  has_many :enrollments
+
   
   rolify
   
@@ -39,10 +41,16 @@ class User < ApplicationRecord
     updated_at > 2.minutes.ago
   end
   
+  def buy_course(course)
+    self.enrollments.create(course: course, price: course.price)
+  end
+  
   private
   def must_have_a_role
     unless roles.any?
       errors.add(:roles, "must have at least one role")
     end
   end
+
+  
 end

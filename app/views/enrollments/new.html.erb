@@ -1,0 +1,23 @@
+
+<div class="card">
+  <div class="card-header">
+    <h1>
+      <div class="fa fa-graduation-cap"></div>
+      Buy course 
+      <%= link_to @course.title, course_path(@course) %>
+    </h1>
+  </div>
+  <div class="card-body">
+    <%= form_tag course_enrollments_path(@course) do %>
+      <% if @course.price > 0 %>
+        <%= submit_tag "Pay #{number_to_currency(@course.price)}", class: "btn btn-lg btn-primary" %>
+      <% else %>
+        <%= submit_tag "Roll in for free!", class: "btn btn-lg btn-primary" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Back', course_path(@course), class: "btn btn-success" %>
+  </div>
+</div>
+

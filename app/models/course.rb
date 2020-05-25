@@ -7,6 +7,7 @@ class Course < ApplicationRecord
   belongs_to :user
   has_many :lessons, dependent: :destroy
   has_rich_text :description
+  has_many :enrollments
 
   extend FriendlyId
   friendly_id :title, use: :slugged
@@ -21,6 +22,9 @@ class Course < ApplicationRecord
     LEVELS.map { |level| [level, level]}
   end
   
+  def bought(user)
+    self.enrollments.where(user_id: [user.id], course_id: [self.id].empty?)
+  end
   
 
 
