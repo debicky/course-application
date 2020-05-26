@@ -32,9 +32,15 @@
         <%= review_button(course) %>
       </div>
     </div>
-    <div class="card-footer">
-    <div class="fa fa-tasks"></div>
-      Lessons: <%= course.lessons.count %>
+    <div class="card-footer d-flex justify-content-between">
+      <div>
+        <div class="fa fa-tasks"></div>
+        Lessons: <%= course.lessons.count %>
+      </div>
+      <div>
+        <div class="fa fa-user"></div>
+        Students: <%= course.enrollments_count %>
+      </div>
     </div>
     <div class="card-footer d-flex justify-content-between ">
       <%= course.created_at.strftime('%d-%B-%Y') %>
