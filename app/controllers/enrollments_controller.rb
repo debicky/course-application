@@ -5,7 +5,9 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments
   # GET /enrollments.json
   def index
-    @enrollments = Enrollment.all
+    @ransack_enrollments = Enrollment.ransack(params[:enrollment_search], search_key: :enrollment_search)
+    @pagy, @enrollments = pagy(@ransack_enrollments.result.includes(:user))
+
   end
   
   # GET /enrollments/1

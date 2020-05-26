@@ -2,12 +2,26 @@
   <div class="badge badge-primary"><%= @enrollments.count %></div>
 </h3>
 
+    <div class="card p-2">
+      <%= search_form_for @ransack_enrollments, as: :enrollment_search, url: enrollments_path do |f| %>
+        <%= f.label :rating %>
+        <%= f.search_field :rating_eq, placeholder: "Rating", class: "form-control" %>
+        <%= f.search_field :user_email_cont, placeholder: "User email", class: "form-control" %>
+
+        <%= f.submit "Search", class: "btn btn-primary my-2" %>
+        <%= link_to  enrollments_path, class: "btn btn-primary" do %>
+            <div class="fa fa-sync"></div>
+        <% end %>
+      <% end %>
+
+    </div>
+
 <div class="table-responsive">
   <table class = "table table-bordered table-sm table-striped">
     <thead>
       <tr>
         <th><div class="fa fa-graduation-cap"></div> Course</th>
-        <th><div class="fa fa-user"></div> User</th>
+        <th><%= sort_link(@ransack_enrollments, :user_email) %></th>
         <th><div class="fa fa-clock"></div> Reviewed at </th>
         <th>Rating</th>
         <th>Review</th>
@@ -32,6 +46,8 @@
       <% end %>
     </tbody>
   </table>
+      <%== pagy_bootstrap_nav(@pagy) %>
+
 </div>
 
 
