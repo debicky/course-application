@@ -3,7 +3,8 @@ class Enrollment < ApplicationRecord
   belongs_to :user
 
   validates :user, :course, presence: true
-  validates :review, :rating, presence: true
+  validates_presence_of :rating, if: :review?
+  validates_presence_of :review, if: :rating?
 
   validates_uniqueness_of :user_id, scope: :course_id #cant be subscribed twice
   validates_uniqueness_of :course_id, scope: :user_id
