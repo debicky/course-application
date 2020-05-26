@@ -21,6 +21,18 @@ class Enrollment < ApplicationRecord
   
   scope :pending_review, -> { where(rating: [0, nil, ""], review: [0, nil, ""]) }
 
+  after_save do 
+    unless rating.nil? || rating.zero?
+      course.update_rating
+    end
+  end
+
+  after_destroy do
+    course.update_rating
+  end
+
+
+
   protected
 
   def owner_cant_subscribe
