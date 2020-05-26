@@ -6,9 +6,11 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
+    @courses_ransack_path = courses_path
     @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
     #@courses = @ransack_courses.result.includes(:user).order("created_at DESC")
     @pagy, @courses = pagy(@ransack_courses.result.includes(:user).order("created_at DESC"))
+
 
   end
   
@@ -16,6 +18,24 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @lessons = @course.lessons
+  end
+
+  def purchased
+    @courses_ransack_path = purchased_courses_path
+    @pagy, @courses = pagy(Course.joins(:enrollments).where(enrollments: {user: current_user}))
+    render 'index'
+  end
+  
+  def pending_review
+    @courses_ransack_path = pending_review_courses_path
+    @pagy, @courses = pagy(Course.joins(:enrollments).merge(Enrollment.pending_review.where(user: current_user)))
+    render 'index'
+  end
+  
+  def created
+    @courses_ransack_path = created_courses_path
+    @pagy, @courses = pagy(Course.where(user: current_user))
+    render 'index'
   end
   
   # GET /courses/new

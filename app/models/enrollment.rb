@@ -17,7 +17,8 @@ class Enrollment < ApplicationRecord
   def to_s
     user.to_s + " " + course.to_s
   end
-
+  
+  scope :pending_review, -> { where(rating: [0, nil, ""], review: [0, nil, ""]) }
 
   protected
 

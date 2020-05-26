@@ -5,9 +5,17 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments
   # GET /enrollments.json
   def index
-    @ransack_enrollments = Enrollment.ransack(params[:enrollment_search], search_key: :enrollment_search)
+    @enrollment_ransack_path = enrollments_path
+    @ransack_enrollments = Enrollment.ransack(params[:q])
     @pagy, @enrollments = pagy(@ransack_enrollments.result.includes(:user))
-
+    
+  end
+  
+  def my_students
+    @enrollment_ransack_path = my_students_enrollments_path
+    @ransack_enrollments = Enrollment.joins(:course).where(courses: {user: current_user}).ransack(params[:q])
+    @pagy, @enrollments = pagy(@ransack_enrollments.result.includes(:user))
+    render 'index'
   end
   
   # GET /enrollments/1

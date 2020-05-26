@@ -20,7 +20,7 @@ module CoursesHelper
     user_course = course.enrollments.where(user: current_user)
     if current_user
       if user_course.any?
-        if user_course.where(rating: [0, nil, ""], review: [0, nil, ""]).any?
+        if user_course.pending_review.any?
           link_to "Add a review", edit_enrollment_path(user_course.first)
         else
           link_to "You have left a review! Thanks.", enrollment_path(user_course.first)

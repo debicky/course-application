@@ -3,13 +3,13 @@
 </h3>
 
     <div class="card p-2">
-      <%= search_form_for @ransack_enrollments, as: :enrollment_search, url: enrollments_path do |f| %>
+      <%= search_form_for @ransack_enrollments, url: @enrollment_ransack_path do |f| %>
         <%= f.label :rating %>
         <%= f.search_field :rating_eq, placeholder: "Rating", class: "form-control" %>
         <%= f.search_field :user_email_cont, placeholder: "User email", class: "form-control" %>
 
         <%= f.submit "Search", class: "btn btn-primary my-2" %>
-        <%= link_to  enrollments_path, class: "btn btn-primary" do %>
+        <%= link_to  @enrollment_ransack_path, class: "btn btn-primary" do %>
             <div class="fa fa-sync"></div>
         <% end %>
       <% end %>
