@@ -19,6 +19,7 @@
   <% if current_user && policy(enrollment).edit? %>
     <div class="card-footer">
         <%= link_to "Edit review", edit_enrollment_path(enrollment), class: "btn btn-primary" %>
+        <%= link_to "Back to course", course_path(enrollment.course), class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>

@@ -23,7 +23,10 @@
     </div>
     </div>
     <div class="card-footer">
-      <%= enrollment_button(course) %>
+      <div class="d-flex flex-column">
+        <%= enrollment_button(course) %>
+        <%= review_button(course) %>
+      </div>
     </div>
     <div class="card-footer">
     <div class="fa fa-tasks"></div>

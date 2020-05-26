@@ -9,8 +9,12 @@ class Enrollment < ApplicationRecord
 
   validate :owner_cant_subscribe
 
+
+  extend FriendlyId
+  friendly_id :to_s, use: :slugged
+
   def to_s
-    user.to_s + course.to_s
+    user.to_s + " " + course.to_s
   end
 
   protected
