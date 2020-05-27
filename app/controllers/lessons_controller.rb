@@ -6,12 +6,13 @@ class LessonsController < ApplicationController
   def index
     @lessons = Lesson.all
   end
-
+  
   # GET /lessons/1
   # GET /lessons/1.json
   def show
     authorize @lesson
     current_user.view_lesson(@lesson)
+    @lessons = @course.lessons
   end
 
   # GET /lessons/new
