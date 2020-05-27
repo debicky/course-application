@@ -4,7 +4,11 @@ module CoursesHelper
       if course.user == current_user
         link_to "Check your course statistics", course_path(course)
       elsif course.enrollments.where(user: current_user).any?
-        link_to "You already bough this course.", course_path(course)
+        link_to course_path(course) do
+          "<i class='fa fa-tasks text-dark'></i>".html_safe +
+          " Your course progress is " +
+          number_to_percentage(course.progress(current_user), precision: 0)
+        end
       elsif course.price > 0
         link_to number_to_currency(course.price), new_course_enrollment_path(course), class: "btn btn-outline-primary"
       else
