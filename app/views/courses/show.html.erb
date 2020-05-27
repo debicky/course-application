@@ -12,20 +12,31 @@
     <div class="jumbotron">
       <h3><div class="fa fa-graduation-cap"></div> <%= @course.title %></h3>
       <p><%= @course.description %></p>
-
     </div>
-    
-    <% @lessons.each do |lesson| %>
-      <%= render 'lessons/lesson', lesson: lesson %>
-    <% end %>
+
+    <h4 class="text-center"><div class="fa fa-tasks"></div> <%= pluralize(@course.lessons_count, "lesson") %></h4>
+    <ul class="list-group">
+      <% @lessons.each do |lesson| %>
+        <%= render 'lessons/lesson_preview', lesson: lesson %>
+      <% end %>
+    </ul>
+
+    <h4 class="text-center mt-2"><div class="fa fa-comment"></div> <%= pluralize(@enrollments_with_reviews.count, "review") %></h4>
+    <ul class="list-group">
+      <% @enrollments_with_reviews.each do |enrollment| %>
+        <%= render 'enrollments/enrollment', enrollment: enrollment %>
+      <% end %>
+    </ul>
   </div>
 
 
   <div class="col-lg-4 order-0 order-lg-1">
-    <%= render @course %>
-    <% if policy(@course).edit? %>
-    <%= link_to "Add lesson", new_course_lesson_path(@course, @lesson), class: "btn btn-primary btn-block my-2" %>
-    <% end %>
+    <div class="sticky-top">
+      <%= render @course %>
+      <% if policy(@course).edit? %>
+      <%= link_to "Add lesson", new_course_lesson_path(@course, @lesson), class: "btn btn-primary btn-block my-2" %>
+      <% end %>
+    </div>
   </div>
 
 

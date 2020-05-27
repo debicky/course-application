@@ -1,0 +1,10 @@
+<li class="list-group-item">
+  <%= link_to course_lesson_path(@course, lesson) do %>
+    <% if lesson.viewed(current_user) == true %>
+      <div class="far fa-check-square text-success"></div> 
+    <% else %>
+      <div class="far fa-square text-danger"></div> 
+    <% end %>
+    <%= lesson.title %>
+  <% end %>
+</li>

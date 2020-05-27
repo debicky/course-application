@@ -39,6 +39,8 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @lessons = @course.lessons
+    @enrollments_with_reviews = @course.enrollments.reviewed.order(rating: :desc).limit(3)
+
   end
   
   # GET /courses/new
