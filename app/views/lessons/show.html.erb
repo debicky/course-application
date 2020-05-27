@@ -2,9 +2,11 @@
   CourseApp | <%= @course.title %> | <%= @lesson.course.title %>
 <% end %>
 
+<div class="mb-3">
 <%= link_to "Courses", courses_path %> /
 <%= link_to @lesson.course.title, course_path(@lesson.course) %> / 
 <%= link_to @lesson.title %>
+</div>
 
 <div class="row">
   <div class="col-md-8">
@@ -16,7 +18,7 @@
           <div class="fa fa-graduation-cap"></div> <%=  @course.title %>
         <% end %>
         <br>
-        Your progress so far <%= number_to_percentage(@course.progress(current_user), precision: 0) %>.    
+        Your progress so far is <%= number_to_percentage(@course.progress(current_user), precision: 0) %>.    
       </li>
     <% @lessons.each do |lesson| %>
       <% if lesson == @lesson %>
