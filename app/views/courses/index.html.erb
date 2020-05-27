@@ -39,7 +39,9 @@
 
     <div class="row row-cols-1 row-cols-lg-2 rounded">
       <% @courses.each do |course| %>
-        <%= render course %>
+        <div class="col">
+          <%= render course %>
+        </div>
       <% end %>
     </div>
     

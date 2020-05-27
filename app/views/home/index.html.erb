@@ -7,7 +7,7 @@
   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum nesciunt magni ipsum, illum consectetur aut quod itaque id enim suscipit soluta minima. Optio odio placeat ex, deleniti vitae voluptates maiores?</p>
 </div>
 
-<div class="card-group text-center rounded">
+<div class="card-group text-center rounded my-5">
   <div class="card">
     <div class="card-body">
       <h3>
@@ -47,13 +47,18 @@
 
 
 <hr>
-<h2><div class="fa fa-graduation-cap"></div> Continue learing</h2>
-  <div class="card-columns">
+
+<% if current_user %>
+  <h2><div class="fa fa-graduation-cap"></div> Continue learing</h2>
+  <div class="card-group">
     <% @purchased_courses.each do |course| %>
       <%= render course %>
     <% end %>
   </div>
 <hr>
+  
+<% end %>
+
 <h2><div class="fa fa-chart-line"></div> Popular courses</h2>
   <div class="card-columns">
     <% @popular_courses.each do |course| %>
