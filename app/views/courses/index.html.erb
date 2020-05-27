@@ -17,10 +17,11 @@
         <%= f.select :level_cont, Course.levels, class: "form-control" %>
         <%= f.label :language %>
         <%= f.select :language_cont, Course.languages, include_blank: true, class: "form-control" %><br>
-        <%= f.label :price %>
+        <%= sort_link(@ransack_courses, :price) %>
         <%= f.search_field :price_eq, placeholder: "Price", class: "form-control" %>
-        <%= f.label :teacher %>
-        <%= f.search_field :user_email_cont, placeholder: "Teacher email", class: "form-control" %>
+        <%= sort_link(@ransack_courses, :average_rating, "Top rated") %> <br>
+        <%= sort_link(@ransack_courses, :created_at, "Newest") %> <br>
+        <%= sort_link(@ransack_courses, :enrollments_count, "Popular") %> <br>
         <%= f.submit "Search", class: "btn btn-primary my-2" %>
       <% end %>
 
