@@ -11,7 +11,7 @@
   <div class="card">
     <div class="card-body">
       <h3>
-        <div class="fa fa-graduation-cap"></div>
+        <div class="fa fa-book"></div>
         <%= Course.count %>
         Online courses
       </h3>
@@ -47,18 +47,37 @@
 
 
 <hr>
-<h2>Popular courses</h2>
-  <div class="card-columns rounded p-1">
-    <% @courses.each do |course| %>
+<h2><div class="fa fa-graduation-cap"></div> Continue learing</h2>
+  <div class="card-columns">
+    <% @purchased_courses.each do |course| %>
       <%= render course %>
     <% end %>
   </div>
 <hr>
-<h2>Top rated courses</h2>
-<hr>
-<h2>Latest courses</h2>
-  <div class="card-columns rounded p-1">
-    <% @recent_courses.each do |course| %>
+<h2><div class="fa fa-chart-line"></div> Popular courses</h2>
+  <div class="card-columns">
+    <% @popular_courses.each do |course| %>
       <%= render course %>
+    <% end %>
+  </div>
+<hr>
+<h2><div class="fa fa-star"></div> Top rated</h2>
+  <div class="card-columns">
+    <% @top_rated_courses.each do |course| %>
+      <%= render course %>
+    <% end %>
+  </div>
+<hr>
+<h2><div class="fa fa-clock"></div> Latest courses</h2>
+  <div class="card-columns">
+    <% @latest_courses.each do |course| %>
+      <%= render course %>
+    <% end %>
+  </div>
+<hr>
+<h2><div class="fa fa-comment"></div> What our students want to say</h2>
+  <div class="card-columns">
+    <% @enrollments.each do |enrollment| %>
+      <%= render 'enrollments/enrollment', enrollment: enrollment %>
     <% end %>
   </div>
