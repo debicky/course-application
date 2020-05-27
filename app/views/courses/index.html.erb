@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  CourseApp | All Courses
+  CourseApp | <%= action_name.humanize %> courses
 <% end %>
 
 
@@ -31,7 +31,8 @@
   </div>
 
   <div class="col-md-10">
-    <h3 class="text-center">Courses
+    <h3 class="text-center">
+      <%= action_name.humanize %> courses
       <div class="badge badge-primary"><%= @courses.count %></div>
     </h3>
 

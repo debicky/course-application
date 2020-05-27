@@ -3,7 +3,8 @@ class Course < ApplicationRecord
   tracked owner: Proc.new{ |controller, model| controller.current_user }
 
   validates :title, :description, :short_description, :language, :price, :level, presence: true
-
+  validates :title, uniqueness: true
+  
   belongs_to :user, counter_cache: true
   has_many :lessons, dependent: :destroy
   has_rich_text :description
