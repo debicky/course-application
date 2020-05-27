@@ -33,7 +33,7 @@
 
 
   <div class="col-lg-4 order-0 order-lg-1">
-    <div class="sticky-top">
+    <div class="sticky-top pt-5">
       <%= render @course %>
       <% if policy(@course).edit? %>
       <%= link_to "Add lesson", new_course_lesson_path(@course, @lesson), class: "btn btn-primary btn-block my-2" %>

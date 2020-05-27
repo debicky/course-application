@@ -12,6 +12,11 @@ class Course < ApplicationRecord
   has_many :user_lessons, through: :lessons
   #User.find_each { |user| User.reset_counters(user.id, :courses)}
 
+  scope :published, -> { where(published: true) }
+  scope :unpublished, -> { where(published: false) }
+  scope :approved, -> { where(approved: true) }
+  scope :unapproved, -> { where(approved: false) }
+
   def to_s
     title
   end

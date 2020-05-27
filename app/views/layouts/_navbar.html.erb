@@ -54,17 +54,21 @@
                 <div class="fa fa-user"></div>
                 Users
               <% end %>
+              <%= link_to unapproved_courses_path, class: "dropdown-item" do %>
+                <div class="fa fa-graduation-cap"></div>
+                Unapproved courses
+              <% end %>
             </div>
           </li>
         <% end %>
 
         <% if current_user && current_user.has_role?(:teacher) %>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="teacherNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle " href="#" id="teacherNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="fa fa-chalkboard-teacher"></div>
               Teach
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="teacherNavbarDropdown">
+            <div class="dropdown-menu dropdown-menu-right " aria-labelledby="teacherNavbarDropdown">
               <%= link_to new_course_path, class: "dropdown-item" do %>
                 <div class="fa fa-plus"></div>
                 New Course
