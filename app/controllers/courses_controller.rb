@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy, :approve, :unapprove]
-  before_action :authenticate_user!, except: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
 
   # GET /courses

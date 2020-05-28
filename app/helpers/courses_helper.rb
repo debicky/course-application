@@ -15,7 +15,7 @@ module CoursesHelper
         link_to "This course is for free!", new_course_enrollment_path(course), class: "btn btn-primary"
       end
     else
-      link_to "Check price", new_course_enrollment_path(course), class: "btn btn-primary"
+      link_to "Check price", new_course_enrollment_path(course), class: "btn btn-outline-primary"
     end
     
   end
