@@ -5,9 +5,9 @@
 
 <div class="row">
   <div class="col-md-2">
-    <h3 class="text-center">Filter
-      <div class="badge badge-primary"></div>
-    </h3>
+    <div class="pb-4">
+      <h3 class="text-center">Filter</h3>
+    </div>
 
     <div class="card p-2">
       <%= search_form_for @ransack_courses, as: :courses_search, url: @courses_ransack_path do |f| %>
@@ -32,10 +32,12 @@
   </div>
 
   <div class="col-md-10">
-    <h3 class="text-center">
-      <%= action_name.humanize %> courses
-      <div class="badge badge-primary"><%= @courses.count %></div>
-    </h3>
+    <div class="pb-4">
+      <h3 class="text-center">
+        <%= action_name.humanize %> courses
+        <div class="badge badge-primary"><%= @courses.count %></div>
+      </h3>
+    </div>
 
     <div class="row row-cols-1 row-cols-lg-2 rounded">
       <% @courses.each do |course| %>
