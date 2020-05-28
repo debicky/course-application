@@ -12,6 +12,7 @@ skip_before_action :authenticate_user!, only: [:index]
   end
 
   def activity
-    @activities = PublicActivity::Activity.all
+    @pagy, @activities = pagy(PublicActivity::Activity.all.order(created_at: :desc))
   end
 end
+

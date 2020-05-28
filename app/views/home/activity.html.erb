@@ -10,10 +10,20 @@
     <%= activity.id %>
     <%= activity.trackable_type %>
     <%= activity.trackable_id %>
-    <%= link_to activity.trackable, activity.trackable %>
+    <% if activity.trackable_type == "Lesson" %>
+      <% if Lesson.where(id: activity.trackable_id).present? %>
+        <%= link_to activity.trackable, course_lesson_path(activity.trackable.course, activity.trackable) %>
+      <% else %>
+        Lesson was deleted
+      <% end %>
+    <% else %>
+      <%= link_to activity.trackable, activity.trackable %>
+    <% end %>
     <%= activity.key %>
     <%= activity.parameters %>
     <%= activity.owner.email %>
   </li>
   </ul>
 <% end %>
+
+<%== pagy_nav(@pagy) %>
