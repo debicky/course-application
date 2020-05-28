@@ -58,7 +58,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     authorize @course
-    @lessons = @course.lessons
+    @lessons = @course.lessons.rank(:row_order).all
     @enrollments_with_reviews = @course.enrollments.reviewed.order(rating: :desc).limit(3)
 
   end

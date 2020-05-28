@@ -15,16 +15,18 @@
     </div>
 
     <h4 class="text-center"><div class="fa fa-tasks"></div> <%= pluralize(@course.lessons_count, "lesson") %></h4>
-    <ul class="list-group">
+    <ul class="list-group lesson-sortable">
       <% @lessons.each do |lesson| %>
-        <li class="list-group-item list-group-item-action">
-          <%= render 'lessons/lesson_preview', lesson: lesson %>
-        </li>
+        <%= content_tag "div", id: "lesson-#{lesson.id}", data: { model_name: lesson.class.name.underscore, update_url: course_lesson_sort_path(@course, lesson)} do %>
+          <li class="list-group-item list-group-item-action">
+            <%= render 'lessons/lesson_preview', lesson: lesson %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
 
     <h4 class="text-center mt-2"><div class="fa fa-comment"></div> <%= pluralize(@enrollments_with_reviews.count, "review") %></h4>
-    <ul class="list-group">
+    <ul class="list-group" id="sortable">
       <% @enrollments_with_reviews.each do |enrollment| %>
         <%= render 'enrollments/enrollment', enrollment: enrollment %>
       <% end %>
@@ -39,6 +41,7 @@
       <%= link_to "Add lesson", new_course_lesson_path(@course, @lesson), class: "btn btn-primary btn-block my-2" %>
       <% end %>
     </div>
+
   </div>
 
 

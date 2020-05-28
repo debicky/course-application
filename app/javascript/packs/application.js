@@ -25,3 +25,5 @@ import "@fortawesome/fontawesome-free/js/all";
 
 require("trix")
 require("@rails/actiontext")
+require("jquery")
+require("jquery-ui-dist/jquery-ui")

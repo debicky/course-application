@@ -4,5 +4,10 @@
   <% else %>
     <div class="far fa-square text-danger"></div> 
   <% end %>
+  
+  <% if @course.lessons.count > 1 %>
+    <%= lesson.row_order_rank + 1 %>
+  <% end %>
+  
   <%= lesson.title %>
 <% end %>
