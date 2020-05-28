@@ -12,6 +12,7 @@ gem 'public_activity'
 gem "rolify"
 gem "pundit"
 gem 'pagy'
+gem 'rails-erd', group: :development
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
