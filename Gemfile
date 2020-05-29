@@ -16,6 +16,7 @@ gem 'rails-erd', group: :development
 gem 'ranked-model'
 gem "aws-sdk-s3", require: false
 gem 'active_storage_validations'
+gem 'image_processing'
 
 
 
