@@ -4,14 +4,15 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :description, as: :rich_text_area, label: 'Description', placeholder: 'Text goes here' %>
+    <%= f.label :description %>
+    <%= f.rich_text_area :description, placeholder: 'Text goes here' %>
+    <%= f.error_notification description: f.object.errors[:logo].to_sentence %>
     <%= f.input :short_description %>
     <% if @course.logo.attached? %>
       <%= image_tag @course.logo, class: "img-thumbnail", style: "width: 200px" %>
     <% end %>
     <%= f.label :logo %> <br>
     <%= f.file_field :logo %>
-    <%= f.error_notification message: f.object.errors[:logo].to_sentence %>
     <%= f.input :level, collection: Course.levels %>
     <%= f.input :language, collection: Course.languages %>
     <%= f.input :price %>
