@@ -73,13 +73,13 @@
   </div>
 <hr>
 <h2><div class="fa fa-star"></div> Top rated</h2>
-  <div class="card-columns">
+  <div class="card-group">
     <% @top_rated_courses.each do |course| %>
       <%= render course %>
     <% end %>
-    <div class="text-right">
-      <%= link_to "Top rated courses", courses_path(courses_search: {s: 'average_rating desc'} ), class: "" %>
-    </div>
+  </div>
+  <div class="text-right">
+    <%= link_to "Top rated courses", courses_path(courses_search: {s: 'average_rating desc'} ), class: "" %>
   </div>
 <hr>
 <h2><div class="fa fa-clock"></div> Latest courses</h2>

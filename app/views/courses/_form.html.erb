@@ -11,6 +11,7 @@
     <% end %>
     <%= f.label :logo %> <br>
     <%= f.file_field :logo %>
+    <%= f.error_notification message: f.object.errors[:logo].to_sentence %>
     <%= f.input :level, collection: Course.levels %>
     <%= f.input :language, collection: Course.languages %>
     <%= f.input :price %>
