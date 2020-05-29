@@ -10,6 +10,7 @@ class Course < ApplicationRecord
   has_rich_text :description
   has_many :enrollments, dependent: :restrict_with_error
   has_many :user_lessons, through: :lessons
+  has_one_attached :logo
   #User.find_each { |user| User.reset_counters(user.id, :courses)}
 
   scope :published, -> { where(published: true) }
