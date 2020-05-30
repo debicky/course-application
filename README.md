@@ -11,7 +11,7 @@ Things you may want to cover:
   I used newest Ruby and Ruby on Rails version.
 
 * System dependencies
-  > Ubuntu 18.04.4 LTS <i class="fab fa-ubuntu"></i>
+  > Ubuntu 18.04.4 LTS
 
 * Configuration
 
