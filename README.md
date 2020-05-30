@@ -1,28 +1,32 @@
 # Course-application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Your own teaching platform! 
 
-Things you may want to cover:
-
+There are 3 types of users:
+- Administrator - can access everything on the app. This role have additional features like:
+  - All users enrollments, to keep an eye on who&when bought, left review and opinion on a course.
+  - Activity, place where we can check all CRUD operations made on our app.
+  - Users, adding&removing roles, checking if the email is confirmed, last sign up, sign in, courses and enrollments count.
+  
 * Ruby & Ruby on Rails version
   > 2.7.1 & 6.0.3 
-  
-  I used newest Ruby and Ruby on Rails version.
 
 * System dependencies
   > Ubuntu 18.04.4 LTS
 
-* Configuration
+gem 'bootstrap'
+gem 'simple_form'
+gem 'devise'
+gem 'faker'
+gem 'friendly_id'
+gem 'ransack'
+gem 'public_activity'
+gem "rolify"
+gem "pundit"
+gem 'pagy'
+gem 'rails-erd', group: :development
+gem 'ranked-model'
+gem "aws-sdk-s3", require: false
+gem 'active_storage_validations'
+gem 'image_processing'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
