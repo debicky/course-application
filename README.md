@@ -6,11 +6,12 @@ application up and running.
 Things you may want to cover:
 
 * Ruby & Ruby on Rails version
-> 2.7.1 & 6.0.3 
-I used newest Ruby and Ruby on Rails version.
+  > 2.7.1 & 6.0.3 
+  
+  I used newest Ruby and Ruby on Rails version.
 
 * System dependencies
-> Ubuntu 18.04.4 LTS
+  > Ubuntu 18.04.4 LTS @ icon-ubuntu
 
 * Configuration
 
