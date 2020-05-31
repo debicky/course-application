@@ -42,20 +42,49 @@ Can visit root page, which contains list of:
 ### Used gems
 
 1. gem 'bootstrap' 
-   > - easy solution for basic RWD layout. Card system used widely around application. Usefull navbar with dropdown buttons.
+   > easy solution for basic RWD layout. Card system used widely around application. Usefull navbar with dropdown buttons.
 
-2. > gem 'simple_form'
-3. > gem 'devise'
-4. > gem 'faker'
-5. > gem 'friendly_id'
-6. > gem 'ransack'
-7. > gem 'public_activity'
-8. > gem "rolify"
-9. > gem "pundit"
-10. > gem 'pagy'
-11. > gem 'rails-erd', group: :development
-12. > gem 'ranked-model'
-13. > gem "aws-sdk-s3", require: false
-14. > gem 'active_storage_validations'
-15. > gem 'image_processing'
+2. gem 'simple_form'
+   > easier form managing. Ability to add bootstrap classes to all forms at once.
+   
+3. gem 'devise'
+   > my favourite gem. Extra fast and easy authentication system. Various additional features like: trackable - user login count, IP, last time visited and many more, confirmable - sending email with confirmation instructions and lot more.
+   
+4. gem 'faker'
+   > funny and useful gem to seed database. Used to create users, courses, lessons and comments.
+   
+5. gem 'friendly_id'
+   > enhance your ordinary URLs. Insted of having courses/12345 we can have courses/titleofmycourse.
+   
+6. gem 'ransack'
+   > filter and search functionality. Gem used widely to filter all courses. Ability to sort tables by clicking on their names.
+   
+7. gem 'public_activity'
+   > gem witch allows to track CRUD operations made by user. It lets me to do activity tab for admin.
+   
+8. gem "rolify"
+   > thanks to this gem, after sign up user already got "Teacher" and "Student" role.
+   
+9. gem "pundit"
+   > Combined with rolify gaves me easy to use authorization system.
+   
+10. gem 'pagy'
+   > fast and lightweight paggination feature. Easily used with bootstrap for better look.
+   
+11. gem 'rails-erd', group: :development
+   > generates dragram based on your application model relationships. 
+   
+   PICTURE OF THIS DIAGRAM <<< 
+   
+12. gem 'ranked-model'
+   > row sorting library. Combined with jQuery sortable library let me make drag and drop feature for editing order of lessons preview list.
+   
+13. gem "aws-sdk-s3"
+   > needed to upload files to Amazon S3 bucket in production.
+   
+14. gem 'active_storage_validations'
+   > needed for creating validations like file size or presence for active_storage files uploaded to application.
+   
+15. gem 'image_processing'
+   > combined with active_storage and active_storage_validations. Ability to resize picture "the ruby way".
 
