@@ -13,9 +13,10 @@ Can visit root page, which contains list of:
    - what our students want to say (reviews left by students).
   
 2. Student - can enroll to courses and see lessons related to it. Every single user gets that roll after signing up to the application.
-   - *Continue learing*, - additional list on root page, with courses which belongs to user. **Shows up only after first enroll.**
+  * *Continue learing*, - additional list on root page, with courses which belongs to user. **Shows up only after first enroll.**
+  
     - *Your courses*, - list of courses which belongs to user. **Visited lessons marked with green index**, navigation buttons to previous and next lessons,  **%percentage progress status of total lessons visited**.
-  - *Pending review*, list of courses which belongs to user, where user didn't left rating and review so far. 
+    - *Pending review*, list of courses which belongs to user, where user didn't left rating and review so far. 
   
 3. Teacher  - ability to create, update, delete courses&course lessons. Every single user gets that roll after signing up to the application.
     - *New course*, create a new course, add short and long description, logo image, level, language and price. Long description has rich_text. Except formating text, **you can add files to let your students download them (link_to in blob file**). **Teacher has to select "published" to let students enroll.**(As long as admin approved it already.) Course can't be deleted if there are enrolled students. Then teacher can add lessons to the course. Lessons also has rich_text functionality. **Order of created lessons can be changed by drag & drop functionality.**
@@ -40,19 +41,21 @@ Can visit root page, which contains list of:
 
 ### Used gems
 
-1. gem 'bootstrap'
-2. gem 'simple_form'
-3. gem 'devise'
-4. gem 'faker'
-5. gem 'friendly_id'
-6. gem 'ransack'
-7. gem 'public_activity'
-8. gem "rolify"
-9. gem "pundit"
-10. gem 'pagy'
-11. gem 'rails-erd', group: :development
-12. gem 'ranked-model'
-13. gem "aws-sdk-s3", require: false
-14. gem 'active_storage_validations'
-15. gem 'image_processing'
+1. gem 'bootstrap' 
+   > - easy solution for basic RWD layout. Card system used widely around application. Usefull navbar with dropdown buttons.
+
+2. > gem 'simple_form'
+3. > gem 'devise'
+4. > gem 'faker'
+5. > gem 'friendly_id'
+6. > gem 'ransack'
+7. > gem 'public_activity'
+8. > gem "rolify"
+9. > gem "pundit"
+10. > gem 'pagy'
+11. > gem 'rails-erd', group: :development
+12. > gem 'ranked-model'
+13. > gem "aws-sdk-s3", require: false
+14. > gem 'active_storage_validations'
+15. > gem 'image_processing'
 
