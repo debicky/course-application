@@ -69,22 +69,22 @@ Can visit root page, which contains list of:
    > Combined with rolify gaves me easy to use authorization system.
    
 10. gem 'pagy'
-   > fast and lightweight paggination feature. Easily used with bootstrap for better look.
+     > fast and lightweight paggination feature. Easily used with bootstrap for better look.
    
 11. gem 'rails-erd', group: :development
-   > generates dragram based on your application model relationships. 
+     > generates dragram based on your application model relationships. 
    
    PICTURE OF THIS DIAGRAM <<< 
    
 12. gem 'ranked-model'
-   > row sorting library. Combined with jQuery sortable library let me make drag and drop feature for editing order of lessons preview list.
+     > row sorting library. Combined with jQuery sortable library let me make drag and drop feature for editing order of lessons preview list.
    
 13. gem "aws-sdk-s3"
-   > needed to upload files to Amazon S3 bucket in production.
+     > needed to upload files to Amazon S3 bucket in production.
    
 14. gem 'active_storage_validations'
-   > needed for creating validations like file size or presence for active_storage files uploaded to application.
+      > needed for creating validations like file size or presence for active_storage files uploaded to application.
    
 15. gem 'image_processing'
-   > combined with active_storage and active_storage_validations. Ability to resize picture "the ruby way".
+      > combined with active_storage and active_storage_validations. Ability to resize picture "the ruby way".
 
