@@ -1,5 +1,13 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy, :delete_video]
+
+
+  def delete_video
+    authorize @lesson, :edit? 
+    @lesson.video.purge
+    @lesson.video_thumbnail.purge
+    redirect_to edit_course_lesson_path(@course, @lesson), notice: "Video deleted."
+  end
 
   def sort
     @course = Course.friendly.find(params[:course_id])
@@ -8,6 +16,7 @@ class LessonsController < ApplicationController
     lesson.update(lesson_params)
     render body: nil
   end
+
   # GET /lessons
   # GET /lessons.json
   def index

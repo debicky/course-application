@@ -15,6 +15,7 @@
                   poster="<%= @lesson.video_thumbnail.present? ? url_for(@lesson.video_thumbnail) : "" %>">
             <source src="<%= rails_blob_url(@lesson.video) %>" type="<%= @lesson.video.content_type %>">
           </video>
+
         </div>
       <% end %>
       <%= lesson.content %>

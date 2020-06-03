@@ -27,3 +27,5 @@ require("trix")
 require("@rails/actiontext")
 require("jquery")
 require("jquery-ui-dist/jquery-ui")
+
+
