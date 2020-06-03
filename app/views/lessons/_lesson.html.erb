@@ -9,6 +9,14 @@
   </div>
   <% if policy(lesson).show? %>
     <div class="card-body">
+      <% if lesson.video.attached? %>
+        <div class="embed-responsive embed-responsive-16by9">
+          <video controls="true" width="100%" preload="metadata" controlslist="nodownload" 
+                  poster="<%= @lesson.video_thumbnail.present? ? url_for(@lesson.video_thumbnail) : "" %>">
+            <source src="<%= rails_blob_url(@lesson.video) %>" type="<%= @lesson.video.content_type %>">
+          </video>
+        </div>
+      <% end %>
       <%= lesson.content %>
     </div>
   <% end %>
