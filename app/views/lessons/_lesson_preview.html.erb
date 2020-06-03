@@ -4,8 +4,14 @@
   <% else %>
     <div class="far fa-square text-danger"></div> 
   <% end %>
-  
-  <%= lesson.row_order_rank + 1 %>
-  
+  <b>
+    <%= lesson.row_order_rank + 1 %>.
+  </b>
   <%= lesson.title %>
+  <div class="float-right">
+    <% if policy(lesson).edit? %>
+      <span class="fa fa-eye"></span> <%= lesson.user_lessons.count %> 
+    <% end %>
+    <span class="fa fa-comment"></span> <%= lesson.comments_count %>
+  </div>
 <% end %>
