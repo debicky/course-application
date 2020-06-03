@@ -11,8 +11,7 @@
     <% if @course.logo.attached? %>
       <%= image_tag @course.logo, class: "img-thumbnail", style: "width: 200px" %>
     <% end %>
-    <%= f.label :logo %> <br>
-    <%= f.file_field :logo %>
+    <%= f.input :logo %>
     <%= f.input :level, collection: Course.levels %>
     <%= f.input :language, collection: Course.languages %>
     <%= f.input :price %>

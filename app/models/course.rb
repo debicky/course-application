@@ -5,6 +5,10 @@ class Course < ApplicationRecord
   validates :title, :description, :short_description, :language, :price, :level, presence: true
   validates :title, uniqueness: true
   validates :logo, content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 500.kilobytes , message: 'Maximum size is 500 kilobytes.' }
+  validates :short_description, length: { minimum: 5}
+  validates :description, length: { maximum: 3000}
+  validates :title, length: { maximum: 100}
+  validates :price, numericality: {greater_than_or_equal_to: 0}
   
   belongs_to :user, counter_cache: true
   has_many :lessons, dependent: :destroy
