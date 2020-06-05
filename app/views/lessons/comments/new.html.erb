@@ -1,1 +1,12 @@
-<%= render 'lessons/comments/form' %>
+<div class="card">
+  <div class="card-header">
+    Add comment to a lesson:
+      <%= @lesson %>
+  </div>
+  <div class="card-body">
+    <%= render 'lessons/comments/form' %>
+  </div>
+  <div class="card-footer">
+    <%= link_to "Back to lesson", url_for(:back), class: "btn btn-primary" %>
+  </div>
+</div>

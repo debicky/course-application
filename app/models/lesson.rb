@@ -3,7 +3,7 @@ class Lesson < ApplicationRecord
   validates :title, :content, :course, presence: true
   validates :title, length: { maximum: 100}
   validates_uniqueness_of :title, scope: :course_id
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
 
   #Course.find_each { |course| Course.reset_counters(course.id, :courses)}
