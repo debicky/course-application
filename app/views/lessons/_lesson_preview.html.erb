@@ -10,7 +10,7 @@
   <%= lesson.title %>
   <div class="float-right">
     <% if policy(lesson).edit? %>
-      <span class="fa fa-eye"></span> <%= lesson.user_lessons.count %> 
+      <span class="fa fa-eye"></span> <%= lesson.user_lessons_count %> 
     <% end %>
     <span class="fa fa-comment"></span> <%= lesson.comments_count %>
   </div>

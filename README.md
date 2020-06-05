@@ -2,6 +2,8 @@
 
 ## Your own teaching platform! 
 
+Enroll to courses! View lessons, comment them!
+
 
 ### There are 4 types of users:
 
@@ -26,7 +28,7 @@ Can visit root page, which contains list of:
 4. Administrator - can access everything on the app. This role have additional features like:
     - *Enrollments*, to keep an eye on who&when bought, left review and opinion on a course.
     - *Activity*, place where we can check all CRUD operations made on our app.
-    - *Users*, adding&removing roles, checking if the email is confirmed, last sign up, sign in, courses and enrollments count.
+    - *Users*, adding&removing roles, checking if the email is confirmed, last sign up, sign in, courses, enrollments, comments and visited lessons count.
     - *Unapproved courses*, **admin has to approve course to make it accesible for students.**
 
 
