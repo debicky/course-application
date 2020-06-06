@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :enrollments do
     get :my_students, on: :collection
   end
-  devise_for :users
+  devise_for :users, controllers: {  registrations: "users/registrations" }
+
   resources :lessons
   resources :courses do
     get :purchased, :pending_review, :created, :unapproved, on: :collection
@@ -26,3 +27,4 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
