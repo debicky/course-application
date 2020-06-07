@@ -21,6 +21,8 @@ gem 'recaptcha'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-facebook'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 
 
