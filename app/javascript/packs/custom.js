@@ -19,6 +19,11 @@ $(document).on('turbolinks:load', function(){
     });
   });
 
+  $("video").bind("contextmenu", function(){
+    return false;
+  });
+
+
 
 
 });
