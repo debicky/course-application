@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :enrollments do
     get :my_students, on: :collection
   end
-  devise_for :users, controllers: {  registrations: "users/registrations" }
+  devise_for :users, controllers: {  registrations: "users/registrations", omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :lessons
   resources :courses do
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update, :show]
   root 'home#index'
   get 'activity', to: 'home#activity'
+  get 'privacy_policy', to: 'home#privacy_policy'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

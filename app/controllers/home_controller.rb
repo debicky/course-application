@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-skip_before_action :authenticate_user!, only: [:index]
+skip_before_action :authenticate_user!, only: [:index, :privacy_policy]
 
 
   def index
@@ -13,6 +13,11 @@ skip_before_action :authenticate_user!, only: [:index]
 
   def activity
     @pagy, @activities = pagy(PublicActivity::Activity.all.order(created_at: :desc))
+  end
+
+
+  def privacy_policy
+    
   end
 end
 
