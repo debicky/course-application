@@ -60,20 +60,6 @@ class CoursesController < ApplicationController
     authorize @course
     @lessons = @course.lessons.rank(:row_order).all
     @enrollments_with_reviews = @course.enrollments.reviewed.order(rating: :desc).limit(3)
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: "#{@course.title}, #{@current_user.email}",
-        page_size: 'A4',
-        template: 'courses/show.pdf.erb',
-        layout: 'pdf.html.erb',
-        orientation: "Portrait",
-        lowquality: true,
-        zoom: 1,
-        dpi: 75
-      end
-    end
-
   end
   
   # GET /courses/new

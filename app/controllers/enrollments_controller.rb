@@ -1,6 +1,7 @@
 class EnrollmentsController < ApplicationController
-  before_action :set_enrollment, only: [:show, :edit, :update, :destroy]
+  before_action :set_enrollment, only: [:show, :edit, :update, :destroy, :certificate]
   before_action :set_course, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:certificate]
 
   # GET /enrollments
   # GET /enrollments.json
@@ -21,6 +22,18 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments/1
   # GET /enrollments/1.json
   def show
+  end
+  
+  def certificate
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{@enrollment.course.title}, #{@enrollment.user.email}",
+        page_size: 'A4',
+        template: 'enrollments/show.pdf.erb'
+
+      end
+    end
   end
   
   # GET /enrollments/new

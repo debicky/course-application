@@ -31,6 +31,8 @@
     <div class="d-flex flex-column">
       <%= enrollment_button(course) %>
       <%= review_button(course) %>
+          <%= link_to "Certificate", certificate_enrollment_path(enrollment, format: :pdf), target: _blank %>
+
     </div>
   </div>
   <div class="card-footer d-flex justify-content-between">
