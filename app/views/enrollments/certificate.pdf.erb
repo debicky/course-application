@@ -1,0 +1,11 @@
+<div style="width:1200px; height:800px; padding:20px; text-align:center; border: 10px solid #163d7c">
+  <div id="header" class="center">
+    <h1>Certificate of Completion</h1>
+  </div>
+
+  <h2>Course <%= @enrollment.course.title %> for <%= @enrollment.user.email %></h2>
+
+  <h3>User <%= @enrollment.user.email %> succesfully completed course!</h3>
+  <h3><b>Certificate id:</b> <%= @enrollment.slug %></h3>
+  <h3><b>Certificate url:</b> <%= request.base_url %><%= request.original_fullpath %></h3>
+</div>

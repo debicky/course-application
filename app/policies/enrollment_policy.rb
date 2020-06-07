@@ -17,6 +17,10 @@ class EnrollmentPolicy < ApplicationPolicy
   def update?
     @record.user_id == @user.id || @user.has_role?(:admin)
   end
+
+  def certificate?
+    @record.course.lessons_count == @record.course.user_lessons.where(user: @record.user).count
+  end
     
   def destroy?
     @user.has_role?(:admin)
