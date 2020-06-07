@@ -3,6 +3,8 @@
 ## Your own teaching platform! 
 
 Enroll to courses! View lessons, comment them! Main features are conter_cached to make app running faster!
+GitHub application liceanse!
+Added META content tag and google analytics!
 
 
 ### There are 4 types of users:
