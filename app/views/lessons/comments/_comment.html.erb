@@ -3,7 +3,7 @@
     <span class="fa fa-user-edit"></span>
     <%= link_to comment.user, user_path(comment.user) %> |
      Commented <%= time_ago_in_words(comment.created_at) %> ago.
-     <% if policy(@comment).destroy? %>
+     <% if policy(comment).destroy? %>
       <%= link_to [@course, @lesson, comment], method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger" do %>
         <span class="fa fa-trash"></span>
       <% end %>
