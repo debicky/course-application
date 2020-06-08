@@ -339,7 +339,7 @@ DEPENDENCIES
   public_activity
   puma (~> 4.1)
   pundit
-  rails (~> 6.0.3)
+  rails (~> 6.0.3.1)
   rails-erd
   ranked-model
   ransack

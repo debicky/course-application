@@ -5,8 +5,41 @@
 <div class="jumbotron my-5">
   <h1 class="display-4 pb-4">What do you want to learn today?</h1>
   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum nesciunt magni ipsum, illum consectetur aut quod itaque id enim suscipit soluta minima. Optio odio placeat ex, deleniti vitae voluptates maiores?</p>
-  <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
-
+  <% unless current_user %>
+    <hr class="my-5">
+    <div class="row ">
+      <div class="col-md-6 d-flex justify-content-around">
+        <div class="btn-group-vertical">
+        <h3 class="text-shadow">Join to access all the courses</h3>
+          <div class="btn-group">
+            <%= link_to 'Register', new_user_registration_path, class: 'btn btn-light btn-lg' %>
+            <%= link_to 'Login', new_user_session_path, class: 'btn btn-light btn-lg' %>
+          </div>
+          <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-danger btn-lg' do %>
+            Continue with
+            <div class="fab fa-google"></div>
+          <% end %>
+          <%= link_to user_github_omniauth_authorize_path, class: 'btn btn-dark btn-lg' do %>
+            Continue with
+            <div class="fab fa-github"></div>
+          <% end %>
+          <%= link_to user_facebook_omniauth_authorize_path, class: 'btn btn-primary btn-lg' do %>
+            Continue with
+            <div class="fab fa-facebook"></div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex justify-content-around">
+        <div class="btn-group-vertical">
+          <h3 class="text-shadow">Check our courses</h3>
+          <%= link_to courses_path, class: 'btn btn-primary btn-lg' do %>
+            All courses <br>
+            <div class="fa fa-book fa-5x"></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <div class="card-group text-center rounded my-5">
@@ -56,9 +89,9 @@
     <% @purchased_courses.each do |course| %>
       <%= render course %>
     <% end %>
-    <div class="text-right">
-      <%= link_to "All your purchased courses", purchased_courses_path, class: "" %>
-    </div>
+  </div>
+  <div class="text-right">
+    <%= link_to "All your purchased courses", purchased_courses_path, class: "" %>
   </div>
 <hr>
   
@@ -69,13 +102,13 @@
     <% @popular_courses.each do |course| %>
       <%= render course %>
     <% end %>
-    <div class="text-right">
-      <%= link_to "More popular courses", courses_path(courses_search: {s: 'enrollments_count desc'} ), class: "" %>
-    </div>
+  </div>
+  <div class="text-right">
+    <%= link_to "More popular courses", courses_path(courses_search: {s: 'enrollments_count desc'} ), class: "" %>
   </div>
 <hr>
 <h2><div class="fa fa-star"></div> Top rated</h2>
-  <div class="card-group">
+  <div class="card-columns">
     <% @top_rated_courses.each do |course| %>
       <%= render course %>
     <% end %>
@@ -89,9 +122,9 @@
     <% @latest_courses.each do |course| %>
       <%= render course %>
     <% end %>
-    <div class="text-right">
-      <%= link_to "More new courses", courses_path(courses_search: {s: 'created_at desc'} ), class: "" %>
-    </div>
+  </div>
+  <div class="text-right">
+    <%= link_to "More new courses", courses_path(courses_search: {s: 'created_at desc'} ), class: "" %>
   </div>
 <hr>
 <h2><div class="fa fa-comment"></div> What our students want to say</h2>
