@@ -37,7 +37,7 @@ Can visit root page, which contains list of:
 ### Specs
 
 * Ruby & Ruby on Rails version
-  > 2.7.1 & 6.0.3 
+  > 2.7.1 & 6.0.3.1 
 
 * System dependencies
   > Ubuntu 18.04.4 LTS

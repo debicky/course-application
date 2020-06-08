@@ -1,6 +1,8 @@
-You have enrolled to the course <%= link_to @enrollment.course, @enrollment.course %> at <%= @enrollment.created_at %>
-Course price: <%= @enrollment.course.price %>.
-After completing the course, you can download the Certificate of Completion.
+You have enrolled to the course <b><%= link_to @enrollment.course, @enrollment.course %></b> at <b><%= @enrollment.created_at %></b><br>
+Course price: <%= @enrollment.course.price %>. <br>
+After completing the course, you can download the Certificate of Completion. <br>
+<b>You teacher is <%= @enrollment.course.user %></b>
+<br>
 
-Have fun!
+Have fun! <br>
 <%= link_to "CourseApp", root_url %>
