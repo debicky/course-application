@@ -2,7 +2,7 @@
 
 ## Your own teaching platform! 
 
-You can display PDF diagram of Active Record model relationships![Click here to open diagram path.](erd.pdf)
+You can display PDF diagram of Active Record model relationships! [Click here to open diagram path.](erd.pdf)
 
 Enroll to courses! View lessons, comment them! Main features are conter_cached to make app running faster!
 GitHub application liceanse!
