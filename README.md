@@ -2,9 +2,11 @@
 
 ## Your own teaching platform! 
 
+You can display PDF diagram of Active Record model relationships![Click here to open diagram path.](erd.pdf)
+
 Enroll to courses! View lessons, comment them! Main features are conter_cached to make app running faster!
 GitHub application liceanse!
-Added META content tag and google analytics!
+META content tag and google analytics!
 
 
 ### There are 4 types of users:
@@ -77,8 +79,6 @@ Can visit root page, which contains list of:
    
 11. gem 'rails-erd', group: :development
      > generates dragram based on your application model relationships. 
-   
-   PICTURE OF THIS DIAGRAM <<< 
    
 12. gem 'ranked-model'
      > row sorting library. Combined with jQuery sortable library let me make drag and drop feature for editing order of lessons preview list.
